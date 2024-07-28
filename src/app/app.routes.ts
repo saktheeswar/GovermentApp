@@ -7,8 +7,9 @@ import { NgModule } from '@angular/core';
 export const routes: Routes = [
     {path:'',redirectTo:'login',pathMatch:'full'},
     {path:'login', component: LoginComponent},
-    {path:'sing-up', component: SignUpComponent},
+    {path:'sign-up', component: SignUpComponent},
     {path:'home', component: HomeComponent}
+    
 ];
 
 @NgModule({

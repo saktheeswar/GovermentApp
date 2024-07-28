@@ -1,19 +1,20 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../../service/auth.service';
 import { FormsModule } from '@angular/forms';
+import { AuthService } from '../../service/auth.service';
 
 @Component({
   selector: 'app-sign-up',
   standalone: true,
   imports: [FormsModule],
   templateUrl: './sign-up.component.html',
-  styleUrl: './sign-up.component.css'
+  styleUrl: './sign-up.component.css',
+  providers:[AuthService]
 })
 export class SignUpComponent {
   email:string = ''
   password:string = ''
   
-    constructor(private authServie:AuthService){
+    constructor(){
     }
     ngOnInit():void{
   
@@ -27,7 +28,7 @@ export class SignUpComponent {
         alert('Please enter the email')
         return;
       }
-      this.authServie.signUp(this.email,this.password)
+     // this.authService.signUp(this.email,this.password)
       this.email= ''
       this.password =''
     }

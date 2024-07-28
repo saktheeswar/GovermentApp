@@ -1,28 +1,18 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AngularFireModule } from '@angular/fire/compat';
-import { environment } from '../environments/environment';
-import { FormsModule } from '@angular/forms';
-import { AppRoutingModule } from './app.routes'; 
-import { AppComponent } from './app.component';     
-import { LoginComponent } from './component/login/login.component';
-import { HomeComponent } from './component/home/home.component';
-import { SignUpComponent } from './component/sign-up/sign-up.component';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { environment } from '../environments/environment'; // Ensure you have your Firebase config here
+import { AppComponent } from './app.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    HomeComponent,
-    SignUpComponent
-  ],
+  declarations: [],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    FormsModule
+    AngularFireAuthModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: []
 })
 export class AppModule { }
